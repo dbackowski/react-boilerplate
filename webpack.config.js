@@ -5,17 +5,25 @@ var BUILD_DIR = path.resolve(__dirname, 'dist');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
-  entry: APP_DIR + '/index.jsx',
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    APP_DIR + '/index.js'
+  ],
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/public/'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module : {
     loaders : [
       {
-        test : /\.jsx?/,
-        include : APP_DIR,
-        loader : 'babel'
+        test : /\.js$/,
+        loaders: ['react-hot', 'babel'],
+        include : APP_DIR
       }
     ]
   }
