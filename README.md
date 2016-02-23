@@ -1,6 +1,6 @@
 # react-boilerplate
 
-React Boilerplate (Webpack, React, react-hot-loader, Babel).
+React Boilerplate (Webpack, React, react-hot-loader, ESLint, Babel).
 
 ### Usage
 ```

@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "1.0.0",
-  "description": "React Boilerplate (Webpack, React, Babel)",
+  "description": "React Boilerplate (Webpack, React, react-hot-loader, ESLint, Babel)",
   "scripts": {
     "start": "node server.js",
     "build": "./node_modules/.bin/webpack -p",
@@ -29,5 +29,11 @@
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^5.0.0",
+    "eslint": "^2.2.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-react": "^4.0.0"
   }
 }

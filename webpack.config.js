@@ -8,7 +8,7 @@ var config = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    APP_DIR + '/index.js'
+    APP_DIR + '/index.jsx'
   ],
   output: {
     path: BUILD_DIR,
@@ -19,9 +19,16 @@ var config = {
     new webpack.HotModuleReplacementPlugin()
   ],
   module : {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['eslint'],
+        include: APP_DIR
+      }
+    ],
     loaders : [
       {
-        test : /\.js$/,
+        test : /\.jsx?$/,
         loaders: ['react-hot', 'babel'],
         include : APP_DIR
       }
