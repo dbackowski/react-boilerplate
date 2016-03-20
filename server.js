@@ -6,6 +6,10 @@ new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true,
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 300
+  },
   stats: { colors: true }
 }).listen(8080, 'localhost', function (err, result) {
   if (err) {
